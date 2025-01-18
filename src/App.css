@@ -1,7 +1,9 @@
 .App {
   text-align: center;
 }
-
+::-webkit-scrollbar {
+  display: none; /* Скрываем ползунок */
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -12,20 +14,90 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+:root {
+  --primary-color: #3498db; 
+  --secondary-color: #e74c3c; 
+  --tertiary-color: #2ecc71; 
+  --accent-color: #9b59b6; 
+  --background-color: #f4f4f4;
+  --dark-color: #282936;
 }
 
-.App-link {
-  color: #61dafb;
+.App-header {
+  background-color: #3d3e42b9;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  color: rgb(0, 0, 0);
+  max-width: 31vh;
+  padding: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow-y: auto; /* Добавляем вертикальную прокрутку */
+  overflow-x: hidden; 
+}
+.App-Center {
+  position:center;
+  background-color: #3d3e42a2;
+  height: 100vh;
+  min-width: 1500px;
+  max-width:70%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  color: rgb(0, 0, 0);
+  max-width: 31vh;
+  padding: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.main-form-container {
+  min-width: 26vh;
+  min-height: 50vh;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  padding-top: 10px;
+  padding-left: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+  border-radius: 8px; 
+}
+.main-info-container {
+  min-width: 26vh;
+  min-height: 220px;
+  
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  padding-top: 10px;
+  padding-left: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+  border-radius: 8px; 
+}
+
+.main-page-container {
+  min-width: 26vh;
+  min-height: 40vh;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  padding-top: 10px;
+  padding-left: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+  border-radius: 8px; 
+
+}
+.main-chenter {
+  display: flex; 
+  justify-content: left; 
+
+}
+.main-page-add {
+  display: flex; 
+  justify-content: left; 
+
+}
+
+.main-form-add {
+  display: flex; 
+  justify-content: left; 
+
 }
 
 @keyframes App-logo-spin {
@@ -35,4 +107,123 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.glass-button {
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.5s;
+  border: 1px solid #ccc;
+}
+.glass-button:after, .skewed-button:after{
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(
+    45deg,
+    transparent 50%,
+    rgba(255, 255, 255, 0.03) 58%,
+    rgba(255, 255, 255, 0.16) 67%,
+    transparent 68%
+  )!important;
+  background-size: 200% 100%!important;
+  background-position: 165% 0!important;
+  transition: 0.7s!important;
+}
+.glass-button:hover:after,.skewed-button:hover:after {
+  background-position: -20% 0!important;
+}
+.bg-dark {
+  background: linear-gradient(
+        #3d3e42 50%,
+        #66cc99 50%
+    );
+  border-radius: 5px;
+    
+}
+.gradient-button {
+  background: linear-gradient(
+    45deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  border: none;
+}
+.gradient-button:hover {
+  background: linear-gradient(
+    45deg,
+    var(--secondary-color),
+    var(--primary-color)
+  );
+}
+.button {
+  font-family: 'Poppins',Arial, sans-serif;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: white;
+}
+.text-white {
+  color: white !important;
+}
+
+.outline-hover-button {
+  border-radius: 8px!important;
+  background: none!important;
+  border: 2px solid var(--tertiary-color)!important;
+  color: var(--tertiary-color)!important;
+  font-size: 17px!important;
+  flex-wrap: 'wrap'!important;
+  width: auto!important;
+  font-weight: bold!important;
+  
+}
+.outline-hover-button:hover {
+  background: var(--tertiary-color)!important;
+  color: white!important;
+}
+.buttons-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.outline-hover-button-delete {
+  border-radius: 8px!important;
+  background: none!important;
+  border: 2px solid var(--secondary-color)!important;
+  color: var(--secondary-color)!important;
+  padding: 12px 20px;
+  font-size: 17px;
+  margin: 2px;
+  font-weight: bold;
+}
+.outline-hover-button-delete:hover {
+  background: var(--secondary-color)!important;
+  color: white!important;
+}
+
+.outline-hover-button-add {
+  border-radius: 8px!important;
+  background: none!important;
+  border: 2px solid var(--primary-color)!important;
+  color: var(--primary-color)!important;
+  padding: 12px 20px;
+  font-size: 17px;
+  margin: 2px;
+  font-weight: bold;
+}
+.outline-hover-button-add:hover {
+  background: var(--primary-color)!important;
+  color: white!important;
 }

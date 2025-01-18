@@ -1,0 +1,14 @@
+.company-tere p {
+  max-width: 650px; /* Установите максимальную ширину по вашему усмотрению */
+  word-wrap: break-word; /* Позволяет переносить слова на новую строку */
+  overflow-wrap: break-word; /* Современный аналог word-wrap */
+  white-space: normal; /* Позволяет тексту переноситься */
+  padding: 10px;
+}
+.company-tere2 p {
+  max-width: 650px; 
+  word-wrap: break-word; 
+  overflow-wrap: break-word; 
+  white-space: normal; 
+  text-align: left;
+}
